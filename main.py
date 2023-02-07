@@ -11,9 +11,9 @@ def enrigistrer_depenses():
     loyer = input("Entrer votre loyer")
     manger = input("Entrer votre manger")
     transport = input("Entrer votre transport")
-    cursor.execute("INSERT INTO depenses(loyer, manger, transport)VALUES(?,)",(loyer,))
-    cursor.execute("INSERT INTO depenses(loyer, manger, transport)VALUES(?,)", (manger,))
-    cursor.execute("INSERT INTO depenses(loyer, manger, transport)VALUES(?,)", (transport,))
+    cursor.execute("INSERT INTO depenses(loyer)VALUES(?)",(loyer,))
+    cursor.execute("INSERT INTO depenses(manger)VALUES(?)", (manger,))
+    cursor.execute("INSERT INTO depenses(transport)VALUES(?)", (transport,))
     connection.commit()
     print("depenses enrigidstrer avec succes!")
 
@@ -21,8 +21,8 @@ def enrigistrer_revenus():
     print("Enrigistrer vos revenus")
     salaire = input("Entrer votre salaire")
     business = input("Entrer votre business")
-    cursor.execute("INSERT INTO revenus(loyer, manger, transport)VALUES(?,)",(salaire,))
-    cursor.execute("INSERT INTO revenus(loyer, manger, transport)VALUES(?,)", (business,))
+    cursor.execute("INSERT INTO revenus(salaire)VALUES(?)",(salaire,))
+    cursor.execute("INSERT INTO revenus(business)VALUES(?)", (business,))
     connection.commit()
     print("revenus enrigidstrer avec succes!")
 
